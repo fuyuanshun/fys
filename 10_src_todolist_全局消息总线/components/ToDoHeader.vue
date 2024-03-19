@@ -15,16 +15,13 @@ export default {
             "isChecked":false
         }
     },
-    props:['receive'],
     methods:{
         //添加待办事项
         addToDoItem(){
             if(this.toDoName.trim() == ''){
                 return;
             }
-
-            // this.receive(nanoid(), this.toDoName);
-            this.$emit('cliReceive', nanoid(), this.toDoName)
+            this.$bus.$emit('cliReceive', nanoid(), this.toDoName)
             this.toDoName = '';
         }
     }

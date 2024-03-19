@@ -13,16 +13,16 @@
 <script>
 export default {
     name:'ToDoList',
-    props:['toDoList', 'changeStatus', 'deleteToDo'],
+    props:['toDoList'],
     methods:{
         changeStatusItem(id, isChecked){
             // this.changeStatus(id, isChecked)
-            this.$emit('cliChangeStatus', id, isChecked)
+            this.$bus.$emit('cliChangeStatus', id, isChecked)
         },
         deleteItem(id){
             if(confirm('确定删除吗？')){
                 // this.deleteToDo(id);
-                this.$emit('cliDeleteToDo', id)
+                this.$bus.$emit('cliDeleteToDo', id)
             }
         }
     }
