@@ -3,8 +3,8 @@
         <div class="todo-container">
             <div class="todo-wrap">
                 <!-- 传的是一个函数，然后让子组件调用该函数，就可以把数据从子组件传给父组件 -->
-                <ToDoHeader :receive="receive"/>
-                <ToDoList :toDoList="toDoList" :changeStatus="changeStatus" :deleteToDo="deleteToDo"/>
+                <ToDoHeader ref="toDoHeader"/>
+                <ToDoList :toDoList="toDoList" ref="toDoList"/>
                 <ToDoFooter :toDoList="toDoList" :completeList="completeList" :changeStatusAll="changeStatusAll"/>
             </div>
         </div>
@@ -59,6 +59,14 @@ export default {
           localStorage.setItem('toDoList', JSON.stringify(newValue));
         }
       }
+    },
+    mounted(){
+        //绑定header的添加事件
+        this.$refs.toDoHeader.$on('cliReceive', this.receive);
+        //绑定list的更新勾选和删除事件
+        this.$refs.toDoList.$on('cliChangeStatus', this.changeStatus)
+        this.$refs.toDoList.$on('cliDeleteToDo', this.deleteToDo)
+        //
     }
 }
 </script>

@@ -41,7 +41,7 @@ export default {
     methods:{
         clearCompleted(){
             this.tempList = this.toDoList.filter(todo => todo.isChecked == false)
-            console.log("未完成事项为：",this.tempList)
+            
             this.completeList(this.tempList)
         }
     }

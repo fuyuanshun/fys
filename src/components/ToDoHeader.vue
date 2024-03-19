@@ -23,7 +23,8 @@ export default {
                 return;
             }
 
-            this.receive(nanoid(), this.toDoName);
+            // this.receive(nanoid(), this.toDoName);
+            this.$emit('cliReceive', nanoid(), this.toDoName)
             this.toDoName = '';
         }
     }
