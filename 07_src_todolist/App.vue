@@ -27,15 +27,20 @@ export default {
     },
     data(){
         return {
-            toDoList : JSON.parse(localStorage.getItem('toDoList')) || []
+            id:4,
+            toDoList : [
+                {'id':1, 'toDoName':'吃饭', 'isChecked':false}, 
+                {'id':2, 'toDoName':'睡觉', 'isChecked':true}, 
+                {'id':3, 'toDoName':'打豆豆', 'isChecked':false}
+            ]
         };
     },
     methods:{
         receive(id, toDoName){
             this.toDoList.unshift({'id':id, 'toDoName':toDoName, 'isChecked':false})
         },
-        completeList(toDoList){
-            this.toDoList = toDoList;
+        completeList(todoList){
+            this.toDoList = todoList;
         },
         changeStatus(id, isChecked){
             this.toDoList.forEach(item => {
@@ -46,19 +51,18 @@ export default {
             })
         },
         deleteToDo(id){
+            // for(var i = 0; i < this.toDoList.length; i++){
+            //     if(this.toDoList[i].id == id){
+            //         this.toDoList.splice(i, 1);
+            //         console.log(this.toDoList)
+            //         return;
+            //     }
+            // }
             this.toDoList = this.toDoList.filter(item => item.id != id);         
         },
         changeStatusAll(isChecked){
             this.toDoList.forEach(item=>item.isChecked=isChecked);
         }
-    },
-    watch:{
-      toDoList:{
-        deep:true,
-        handler(newValue){
-          localStorage.setItem('toDoList', JSON.stringify(newValue));
-        }
-      }
     }
 }
 </script>

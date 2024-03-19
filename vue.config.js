@@ -1,4 +1,11 @@
 const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
-  transpileDependencies: true
+  transpileDependencies: true,
+  lintOnSave : false,
+  //入口文件配置
+  pages:{
+    index:{
+      entry:'src/main.js'
+    }
+  }
 })
