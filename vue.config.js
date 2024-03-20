@@ -7,5 +7,12 @@ module.exports = defineConfig({
     index:{
       entry:'src/main.js'
     }
-  }
+  },
+  // devServer:{
+  //   proxy: {
+  //     '/search':{
+  //       target:'https://api.github.com/'
+  //     }
+  //   }
+  // }
 })
