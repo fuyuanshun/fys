@@ -1,17 +1,12 @@
 import Vue from 'vue'
 import App from './App.vue'
-import store from './store/index.js'
+import Router from 'vue-router'
+import router from './router/index.js'
 
-
-// import VueResource from 'vue-resource';
-// Vue.use(VueResource)
+Vue.use(Router)
 
 new Vue({
     el:"#root",
-    store,
+    router,
     render: h=> h(App)
-    //全局事件总线
-    // beforeCreate(){
-        // Vue.prototype.$bus = this;
-    // }
 })
