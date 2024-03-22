@@ -11,9 +11,7 @@
                 </li>
             </ul>
         </div>
-        <keep-alive include="News">
-            <router-view></router-view>
-        </keep-alive>
+        <router-view></router-view>
     </div>
 </template>
 
