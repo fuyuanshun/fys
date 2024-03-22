@@ -1,12 +1,13 @@
 import Vue from 'vue'
 import App from './App.vue'
-import Router from 'vue-router'
-import router from './router/index.js'
 
-Vue.use(Router)
+// import ElementUI from 'element-ui'
+// import 'element-ui/lib/theme-chalk/index.css'
+
+import {Button} from 'element-ui'
+Vue.use(Button)
 
 new Vue({
     el:"#root",
-    router,
     render: h=> h(App)
 })

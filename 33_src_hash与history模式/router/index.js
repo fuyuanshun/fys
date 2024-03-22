@@ -9,6 +9,7 @@ import News from '../pages/News.vue'
 import Detail from '../pages/Detail.vue'
 
 const router = new Router({
+    mode:'hash',
     routes:[
         {
             name: 'about',
@@ -18,18 +19,6 @@ const router = new Router({
                 title:'关于',
                 isAuth:true
             },
-            //独享前置路由守卫。（没有后置哦）
-            // beforeEnter:(to, from, next)=>{
-            //     if(!to.meta.isAuth){
-            //         next();
-            //     } else {
-            //         if(localStorage.getItem("name") === 'fys'){
-            //             next();
-            //         } else {
-            //             alert("无权限")
-            //         }
-            //     }
-            // }
         },
         {
             name: 'home',
