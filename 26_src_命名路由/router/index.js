@@ -25,13 +25,7 @@ export default new Router({
                         {
                             name:'detail',
                             path:'detail',
-                            component:Detail,
-                            props($route){
-                                return{
-                                    id: $route.query.id,
-                                    content: $route.query.content
-                                }
-                            }
+                            component:Detail
                         }
                     ]
                 },
