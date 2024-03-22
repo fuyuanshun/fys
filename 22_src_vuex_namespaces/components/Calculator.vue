@@ -27,13 +27,14 @@ export default {
         }
     },
     methods: {
-        ...mapActions({add:'add', division:'division'}),
-        ...mapMutations({minus:'MINUS', ride:'RIDE'})
+        ...mapActions('calculatorOptions', {add:'add', division:'division'}),
+        ...mapMutations('calculatorOptions', {minus:'MINUS', ride:'RIDE'}),
     },
     computed:{
         //对象写法
-        ...mapState(['s', 'school', 'subject', 'personList']),
-        ...mapGetters(['bigSum'])
+        ...mapState('calculatorOptions', ['s', 'school', 'subject']),
+        ...mapState('personOptions', ['personList']),
+        ...mapGetters('calculatorOptions',['bigSum'])
     }
 }
 </script>
