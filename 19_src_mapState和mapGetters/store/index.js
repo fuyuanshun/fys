@@ -8,9 +8,12 @@ const actions = {
     add(context,v){
         context.commit('ADD', v);
     },
-    division(context,v){
-        context.commit('DIVISION', v)
-    }
+    minus(context,v){
+        context.commit('MINUS', v);
+    },
+    ride(context,v){
+        context.commit('RIDE', v);
+    },
 }
 
 const mutations = {
@@ -22,9 +25,6 @@ const mutations = {
     },
     RIDE(state, v){
         state.s =  state.s * v;
-    },
-    DIVISION(state,v){
-        state.s =  state.s  / v;
     }
 }
 
